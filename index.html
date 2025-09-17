@@ -1,13 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Dynamic User Interface Interactions</title>
-  <link rel="stylesheet" href="./style.css">
-  <script src="./scripts/script.js" defer></script>
-</head>
-<body>
-  <h1>"Hello, world!"</h1>
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dynamic User Interface Interactions</title>
+    <link rel="stylesheet" href="./styles/reset.css">
+    <link rel="stylesheet" href="./styles/style.css">
+    <script type="module" src="./scripts/script.js" defer></script>
+  </head>
+  <body>
+    <h1 class="section-heading dropdown-menu-heading">Dropdown Menu</h1>
+    <div class="dropdown-menu-container">
+      <div class="dropdown-button">
+        <p class="dropdown-button-text">Select color</p>
+        <svg class="dropdown-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-down"><polyline points="6 9 12 15 18 9"></polyline></svg>
+      </div>
+      <ul class="dropdown-options hidden">
+        <li>red</li>
+        <li>orange</li>
+        <li>blue</li>
+        <li>green</li>
+        <li>violet</li>
+      </ul>
+    </div>
+  </body>
 </html>
