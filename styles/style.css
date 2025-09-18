@@ -75,7 +75,7 @@
 }
 
 .carousel-slide {
-  width: 100%;
+ flex: 0 0 100%; 
 }
 
 .carousel-nav-container {
