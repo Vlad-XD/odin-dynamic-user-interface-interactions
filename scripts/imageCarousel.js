@@ -6,21 +6,45 @@
 
 function createImageCarousel(prevBtn, nextBtn, navDotsContainer, dotVisibilityClass, carouselTranslateFactorProperty, timeout=false) {
 
+  // constant declarations
+  const TIMEOUT_COUNTDOWN = 5;
   // variable declarations
   const navCircularArray = new carouselNavArray(navDotsContainer, dotVisibilityClass, carouselTranslateFactorProperty);
+  let timeoutCountdown = TIMEOUT_COUNTDOWN; // when timeoutCountdown reaches 0, the image carousel will begin to move by itself
+  let timeoutCounter = timeout;             // used by carouselTimeout function to calculate when to move to next image
 
   prevBtn.addEventListener("click", () => {
     navCircularArray.prev();
+    timeoutCountdown = TIMEOUT_COUNTDOWN;
+    timeoutCounter = timeout;  
   })
 
   nextBtn.addEventListener("click", () => {
     navCircularArray.next();
+    timeoutCountdown = TIMEOUT_COUNTDOWN;
+    timeoutCounter = timeout;  
   })
 
 
   // add timeout functionality if argument provided
   if (timeout !== false) {
+    // start the timedown function
+    const carouselTimeout = (function () {
+      
+      setInterval(() => {
+        if (timeoutCountdown > 0) {
+          timeoutCountdown--;
+        } else {
+          if (timeoutCounter > 0) {
+            timeoutCounter--;
+          } else {
+            navCircularArray.next();
+            timeoutCounter = timeout;
+          }
+        }
+      }, 1000);
 
+    })();
   }
 
 }

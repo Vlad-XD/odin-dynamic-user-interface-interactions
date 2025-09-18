@@ -28,4 +28,4 @@ dropdownOptionsList.forEach((item) => {
 })
 
 // create dropdown menu
-createImageCarousel(carouselPrevBtn, carouselNextBtn, carouselNavDotsContainer, carouselNavDotVisibilityClass, carouselTranslateFactorProperty)
+createImageCarousel(carouselPrevBtn, carouselNextBtn, carouselNavDotsContainer, carouselNavDotVisibilityClass, carouselTranslateFactorProperty, 5);
